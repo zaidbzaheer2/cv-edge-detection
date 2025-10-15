@@ -2,6 +2,8 @@ import streamlit as st
 from PIL import Image
 
 from algorithms.canny import apply_canny_filter
+from algorithms.laplacian import apply_laplacian_filter
+from algorithms.sobel import apply_sobel_filter
 
 def detection_screen():
     st.markdown("""
@@ -40,10 +42,16 @@ def detection_screen():
                 kernel_size = st.slider("Kernel Size", 3, 15, 5, step=2)
                 sigma = st.slider("σ", 0.0, 5.0, 1.0)
                 output_image = apply_canny_filter(image, lower_threshold, upper_threshold, kernel_size, sigma)
+
             elif selected_filter == "Sobel":
-                pass
+                kernel_size = st.slider("Kernel Size", 1, 15, 5, step=2)
+                direction = st.radio("Gradient Direction", ["X", "Y", "Both"])
+                output_image = apply_sobel_filter(image, kernel_size, direction)
+
             elif selected_filter == "Laplacian":
-                pass
+                kernel_size = st.slider("Kernel Size", 3, 15, 5, step=2)
+                output_image = apply_laplacian_filter(image, kernel_size)
+
             else:
                 output_image = None
 
