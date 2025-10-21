@@ -4,18 +4,14 @@ from PIL import Image
 from algorithms.canny import apply_canny_filter
 from algorithms.laplacian import apply_laplacian_filter
 from algorithms.sobel import apply_sobel_filter
+from styles import detection_page_style
+
 
 def detection_screen():
-    st.markdown("""
-        <style>
-            /* Hide sidebar and its toggle completely */
-            [data-testid="stSidebar"] { display: block; }
-            [data-testid="collapsedControl"] { display: block; }
-            [data-testid="stSidebarNav"] { display: none; }
-            [data-testid="stSidebarHeader"] { display: none; }
-        </style>
-    """, unsafe_allow_html=True
-    )
+    st.markdown(detection_page_style, unsafe_allow_html=True)
+    if st.button("<-   Upload another Image"):
+        st.session_state.pop('uploaded_file')
+        st.rerun()
     st.title("CV: Edge Detection")
     st.set_page_config(
         layout="wide",
@@ -28,6 +24,7 @@ def detection_screen():
         with col1:
             st.subheader("Original Image")
             st.image(image)
+
         output_image = None
         with st.sidebar:
             st.header("Edge Detection Algorithms")
@@ -56,8 +53,9 @@ def detection_screen():
                 output_image = None
 
         with col2:
-            st.subheader("Output Image")
             if output_image is not None:
+                st.subheader(f"Output Image - {selected_filter}")
                 st.image(output_image, clamp=True, channels="GRAY")
             else:
+                st.subheader(f"Output Image - No Filter")
                 st.image(image)

@@ -5,5 +5,4 @@ def upload_screen():
     uploaded_file = st.file_uploader("Choose image", type=['png', 'jpg', 'jpeg'])
     if uploaded_file:
         st.session_state.uploaded_file = uploaded_file
-        st.query_params['uploaded'] = "true"
         st.rerun()

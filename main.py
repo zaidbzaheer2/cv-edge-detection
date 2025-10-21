@@ -1,22 +1,16 @@
 import streamlit as st
 from pages.upload import upload_screen
 from pages.detection import  detection_screen
+from styles import main_page_style
 
-st.markdown("""
-    <style>
-        /* Hide sidebar and its toggle completely */
-        [data-testid="stSidebar"] { display: none; }
-        [data-testid="collapsedControl"] { display: none; }
-    </style>
-""", unsafe_allow_html=True
-)
+st.markdown(main_page_style, unsafe_allow_html=True)
 
 st.set_page_config(
-    page_title = "Edge Detection"
+    page_title = "Edge Detection",
+    layout="wide"
 )
 
-query_params = st.query_params
-if 'uploaded' in query_params:
+if 'uploaded_file' in st.session_state:
     detection_screen()
 else:
     upload_screen()
