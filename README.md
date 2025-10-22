@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Edge Detection with Streamlit</h1>
+<h1 style="text-align: center;">CV: Edge Detection</h1>
 
 <p style="text-align: center;">
   <strong>GUI for applying Canny, Sobel, and Laplacian filters to images</strong><br>
@@ -17,7 +17,7 @@ This project provides a user-friendly interface for applying edge detection algo
 <h2>Setup and Installation</h2>
 <ol>
   <li>Clone the repository:
-    <pre><code>git clone   https://github.com/zaidbzaheer2/cv-edge-detection.git </code></pre>
+    <pre><code>git clone https://github.com/zaidbzaheer2/cv-edge-detection.git </code></pre>
   </li>
   <li>Navigate to the project directory:
     <pre><code>cd cv-edge-detection</code></pre>
@@ -26,7 +26,7 @@ This project provides a user-friendly interface for applying edge detection algo
     <pre><code>python -m venv .venv
 .venv/Scripts/activate # On Windows (Powershell)
 .venv\Scripts\activate # On Windows (CMD)
-source .venv/bin/activate  #On Linux</code></pre>
+source .venv/bin/activate  # On Linux</code></pre>
   </li>
   <li>Install dependencies:
     <pre><code>pip install -r requirements.txt</code></pre>
@@ -61,19 +61,13 @@ Once launched, the app will open in your browser. Upload an image and choose an 
 <hr>
 
 <h2>Screenshots</h2>
-
-<h4>Original vs Edge-Detected Output</h4>
-<p>
-<img src="screenshots/original_vs_canny.png" width="800" alt="Original and Canny Output">
-</p>
-
-<h4>Parameter Adjustment UI</h4>
-<p>
-<img src="screenshots/sidebar_controls.png" width="400" alt="Sidebar with filter parameters">
-</p>
-
+<img src="screenshots/upload_screen.jpeg" />
+<img src="screenshots/no_filter.jpeg" />
+<img src="screenshots/canny.jpeg" />
+<img src="screenshots/sobel.jpeg" />
+<img src="screenshots/laplacian.jpeg" />
 <hr>
 
-<p align="center">
-  Built with Python, Streamlit, and OpenCV
+<p style="text-align: center;">
+  Built with Python, Streamlit, and OpenCV By Zaid Bin Zaheer
 </p>
