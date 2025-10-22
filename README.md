@@ -61,10 +61,10 @@ Once launched, the app will open in your browser. Upload an image and choose an 
 <hr>
 
 <h2>Screenshots</h2>
-<img src="screenshots/upload_screen.jpeg" />
-<img src="screenshots/no_filter.jpeg" />
-<img src="screenshots/canny.jpeg" />
-<img src="screenshots/sobel.jpeg" />
+<img src="screenshots/upload_screen.jpeg" /> <hr>
+<img src="screenshots/no_filter.jpeg" /><hr>
+<img src="screenshots/canny.jpeg" /><hr>
+<img src="screenshots/sobel.jpeg" /><hr>
 <img src="screenshots/laplacian.jpeg" />
 <hr>
 
